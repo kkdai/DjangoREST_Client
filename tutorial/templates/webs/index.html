@@ -1,0 +1,10 @@
+{% if snippets_list %}
+    It is work for snippet_list
+    <ul>
+    {% for snip in snippets_list %}
+        <li><a href="/webs/{{snip.id}}/">{{ snip.code }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No snippets are available.</p>
+{% endif %}
