@@ -13,7 +13,7 @@ def index(request):
 	import json
 	import urllib2
 	import os
-	j = urllib2.urlopen("http://localhost/snippets/.json")
+	j = urllib2.urlopen("http://sleepy-plateau-3929.herokuapp.com/snippets/.json")
 	js = json.load(j)
 	outputT = "<br>"
 	'''
