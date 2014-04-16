@@ -13,7 +13,7 @@ def index(request):
 	import json
 	import urllib2
 	import os
-	j = urllib2.urlopen("http://localhost:8000/snippets/.json")
+	j = urllib2.urlopen("http://localhost/snippets/.json")
 	js = json.load(j)
 	outputT = "<br>"
 	'''
