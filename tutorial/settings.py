@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+'''
+Note: the set template path will back to project default, not relative path.
+('/Users/Evan/Documents/heroku/rest_all/tutorial/templates',)
+http://stackoverflow.com/questions/1926049/django-templatedoesnotexist
+'''
 
 PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
 TEMPLATE_DIRS = (

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Show List Page</title>
+    <title>Show Detail Page</title>
 <style>
 
 body {
@@ -169,26 +169,46 @@ table {
 </head>
 
 <body>
+<center>
+<h2>Result from URL </h2>
+<h2><a href="{{detail_url}}">{{detail_url}}</a></h2>
+</center>
 
-{% if snippets_list %}
-    <hr>It is work for snippet_list</h3>
+{% if snippet %}
+    <h3>It is work for get snippet on id {{snippet.id}}</h3>
+
 <table class="bordered">
     <thead>
     <tr>
-        <th>##</th>
-        <th>Item</th>
+        <th>#</th>        
+        <th>Attribute</th>
+        <th>Value</th>
     </tr>
     </thead>
-    {% for snip in snippets_list %}
     <tr>
-        <td>#</td>
-        <td><a href="/webs/{{snip.id}}/">{{ snip.code }}</a></td>
+        <td>1</td>        
+        <td>ID</td>
+
+        <td>{{snippet.id}}</td>
     </tr>        
-    {% endfor %}
+    <tr>
+        <td>2</td>         
+        <td>CODE</td>
+        <td>{{snippet.code}}</td>
+    </tr>
+    <tr>
+        <td>3</td>         
+        <td>language</td>
+        <td>{{snippet.language}}</td>
+    </tr>    
 </table>
+
 {% else %}
-      <p>No snippets are available.</p>
+    <p>No snippet are available.</p>
 {% endif %}
+<center>
+    <a href="../"> Home </a>
+</center>
 
 </body>
 </html>
