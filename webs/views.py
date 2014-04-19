@@ -33,6 +33,12 @@ def detail(request, snippet_id):
 	j = urllib2.urlopen(jsonUrl)
 	js = json.load(j)
 	print js
+	'''
+	For multiple context, it could be input as follow.
+	'''
 	context = {'snippet':js, 'detail_url':jsonUrl}
 	print type(context)
 	return render(request, 'webs/detail.html', context)
+
+def form(request):
+    return HttpResponse(" It is form!")
