@@ -189,6 +189,15 @@ table {
 {% else %}
       <p>No snippets are available.</p>
 {% endif %}
+<hr>
+Add new code into this snippet.
+<form method="post" action="post_form">
+    {% csrf_token %}
+    <label for="Code">Name:</label>
+    <input type="text" name="Name" id="Name" />
+    <input type="submit" name="submit" value="Submit" />
+</form>         
+<hr>
 
 </body>
 </html>

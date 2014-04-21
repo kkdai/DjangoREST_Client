@@ -12,15 +12,11 @@ def index(request):
 	'''
 	j = urllib2.urlopen("http://sleepy-plateau-3929.herokuapp.com/snippets/.json")
 	js = json.load(j)
-	outputT = "<br>"
+	number_count = len(js)
 	'''
 	normally get json object is <list> or <unicode> string
 	it need decode to big5 if you want to operate with "string" in big5 system
 	'''
-	#for rs in js:
-	#	outputT += rs['code'].decode('big5')
-	#	outputT += "<br>"
-	print outputT  #print for debugging using.
 	context = {'snippets_list': js}
 	return render(request, 'webs/index.html', context) 
 
@@ -41,4 +37,18 @@ def detail(request, snippet_id):
 	return render(request, 'webs/detail.html', context)
 
 def form(request):
-    return HttpResponse(" It is form!")
+	import json
+	import urllib2
+	import os
+	j = urllib2.urlopen("http://sleepy-plateau-3929.herokuapp.com/snippets/.json")
+	js = json.load(j)
+	number_count = str(len(js))
+	print number_count
+	context = {'snippet_count':number_count}
+	return render(request, 'webs/form.html', context)
+
+def post_form(request):
+	code_string = request.POST['Name']
+	print code_string
+	return HttpResponse(code_string)
+
