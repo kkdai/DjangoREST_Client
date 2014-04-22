@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import Context, loader	
+from django.http import HttpResponseRedirect
 
 # Create your views here.
 def index(request):
@@ -48,7 +49,15 @@ def form(request):
 	return render(request, 'webs/form.html', context)
 
 def post_form(request):
-	code_string = request.POST['Name']
+	import requests
+	import json
+	code_string = request.POST['code']
 	print code_string
-	return HttpResponse(code_string)
-
+	url = 'http://sleepy-plateau-3929.herokuapp.com/snippets/'
+	payload = {'code': code_string}
+	print payload	
+	headers = {'Content-Type': 'application/json'}
+	print headers
+	response = requests.post(url, data=json.dumps(payload), headers=headers)
+	return HttpResponseRedirect('./')
+	
