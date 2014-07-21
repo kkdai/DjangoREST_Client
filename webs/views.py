@@ -11,7 +11,7 @@ def index(request):
 	'''
 	Using real domain address avoid for server connection.
 	'''
-	j = urllib2.urlopen("http://sleepy-plateau-3929.herokuapp.com/snippets/.json")
+	j = urllib2.urlopen("http://evan-rest-test.herokuapp.com/snippets/.json")
 	js = json.load(j)
 	number_count = len(js)
 	'''
@@ -25,7 +25,7 @@ def detail(request, snippet_id):
 	import json
 	import urllib2
 	import os
-	jsonUrl = "http://sleepy-plateau-3929.herokuapp.com/snippets/" + str(snippet_id) + "/.json"
+	jsonUrl = "http://evan-rest-test.herokuapp.com/snippets/" + str(snippet_id) + "/.json"
 	#print jsonUrl
 	j = urllib2.urlopen(jsonUrl)
 	js = json.load(j)
@@ -41,7 +41,7 @@ def form(request):
 	import json
 	import urllib2
 	import os
-	j = urllib2.urlopen("http://sleepy-plateau-3929.herokuapp.com/snippets/.json")
+	j = urllib2.urlopen("http://evan-rest-test.herokuapp.com/snippets/.json")
 	js = json.load(j)
 	number_count = str(len(js))
 	print number_count
@@ -53,7 +53,7 @@ def post_form(request):
 	import json
 	code_string = request.POST['code']
 	print code_string
-	url = 'http://sleepy-plateau-3929.herokuapp.com/snippets/'
+	url = 'http://evan-rest-test.herokuapp.com/snippets/'
 	payload = {'code': code_string}
 	print payload	
 	headers = {'Content-Type': 'application/json'}
