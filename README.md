@@ -1,7 +1,8 @@
 DjangoREST_Client
 =================
 
-A simple RESTful server and client sample code. 
+A simple RESTful server and client sample code. Server is [here](http://evan-rest-test.herokuapp.com/)
+
 
 Server:
 -Use DjangoRESTFramework to build simple server base on snippets (tutorial 1~3)
